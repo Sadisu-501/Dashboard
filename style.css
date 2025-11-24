@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* root variables */
+:root {
+  --accent-color: rgba(15, 55, 90);
+  --background-color: rgba(205, 212, 222);
+  --icon-color: rgba(205, 212, 222);
+  --dark-text-color: rgb(158, 178, 220);
+  --text-color: #ffffff;
+  --hover-color: rgb(194, 165, 111);
+}
+body {
+  font-family: "poppins";
+}
+
+/* container */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* info styles */
+.info-icon {
+  fill: var(--text-color);
+  font-size: 5rem;
+  translate: 50%;
+}
+
+.info-section {
+  background-color: var(--accent-color);
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 300px;
+  min-height: 100vh;
+  padding: 2rem;
+}
+.info-section-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.info-section-links a {
+  text-decoration: none;
+  gap: 1rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+.info-section-links a:hover {
+  color: rgb(178, 175, 175);
+}
+.container .info-section h1 {
+  color: var(--text-color);
+}
+.container .info-section p {
+  color: var(--hover-color);
+}
+
+/* stats styles */
+.stats-container {
+  flex: 1;
+  padding: 1rem 3rem;
+  background-color: rgb(255, 255, 255);
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+.stats ion-icon {
+  margin-right: 70px;
+  font-size: 1.9rem;
+}
+
+/* card styles */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.card {
+  width: 170px;
+  height: 120px;
+  border-radius: 3px;
+  padding: 0.5rem;
+  background-color: var(--text-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 1rem;
+}
+.card-rating {
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-info {
+  display: flex;
+  color: var(--accent-color);
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+}
+.card:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transition: all cubic-bezier(0.6, 0.04, 0.98, 0.335) ease-out 200ms;
+  cursor: pointer;
+}
+
+.card:hover .card-rating,
+.card:hover .card-info {
+  color: var(--text-color);
+}
+.card-info ion-icon {
+  font-size: 1.6rem;
+}
+.card-rating ion-icon {
+  color: var(--hover-color);
+  font-size: 1.5rem;
+}
+
+/* Small screens (mobile: up to 480px) */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .info-section {
+    width: 100%;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .stats-container {
+    padding: 1rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .stats ion-icon {
+    margin-right: 0;
+  }
+}
+
+/* Medium screens (tablet: 481px – 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .info-section {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%;
+    height: auto;
+  }
+}
+
+/* Large screens (desktop: 769px and above) */
+@media (min-width: 769px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .info-section {
+    width: 300px;
+    min-height: 100vh;
+  }
+
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 170px;
+    height: 120px;
+  }
+}
